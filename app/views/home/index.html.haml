@@ -1,0 +1,11 @@
+%div{style:"text-align:center"}
+  %div{style: "padding: 20px;font-size:16px;font-weight:bold;border:1px sold black;background: gray;border-radius: 5px;"}
+    Gross Revenue So Far:
+    = @gross_revenue
+
+  %div{style: "padding: 20px;font-size:16px;font-weight:bold;border:1px sold black;background: gray;border-radius: 5px;margin-top: 40px;"}
+    =form_tag(process_import_path, method: :post,  multipart:true) do |f|
+      %label
+        Input File
+      %input{type: "file", name: "file"}
+      %input{type: "submit", value: "Upload"}
