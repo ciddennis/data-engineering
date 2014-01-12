@@ -1,9 +1,29 @@
-%div{style:"text-align:center"}
-  %div{style: "padding: 20px;font-size:16px;font-weight:bold;border:1px sold black;background: gray;border-radius: 5px;"}
-    Gross Revenue So Far:
-    = @gross_revenue
+%div{style:""}
+  %div{style: "padding: 20px;font-size:16px;font-weight:bold;border:1px sold black;background: #a4a4a4;border-radius: 5px;text-align:center"}
+    %h1
+      Gross Revenue So Far:
+      = @gross_revenue
 
-  %div{style: "padding: 20px;font-size:16px;font-weight:bold;border:1px sold black;background: gray;border-radius: 5px;margin-top: 40px;"}
+  %div{style: "padding: 20px;font-size:16px;;border:1px sold black;background: #a4a4a4;border-radius: 5px;margin-top: 40px;"}
+    %h3
+      Choose a tab delimited file with the following columns:
+    %ul
+      %li
+        purchaser name
+      %li
+        item description
+      %li
+        item price
+      %li
+        purchase count
+      %li
+        merchant address
+      %li
+        merchant name
+
+    There must be data in each column, there must be a header line, the columns must be in the order listed above.
+    %br
+    %br
     =form_tag(process_import_path, method: :post,  multipart:true) do |f|
       %label
         Input File
