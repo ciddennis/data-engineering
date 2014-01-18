@@ -6,7 +6,7 @@ class Item < ActiveRecord::Base
 
   # Total Gross Revenue
   def self.current_gross_revenue
-    Item.select("sum(price * count) as gross").first["gross"]
+    Item.select("sum(price * count) as gross").first["gross"] || 0
   end
 
   # Given a file read it as tab delim and create Merchants, Purchasers and Items.
